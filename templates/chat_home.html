@@ -1,0 +1,18 @@
+{% extends 'main.html' %}
+{% block content %}
+    <link rel="stylesheet" href="https://getbootstrap.com/docs/4.0/examples/sign-in/signin.css">
+    <div class="container text-centered">
+        <label for="room_name">Room: </label><input type="text" name="room_name" id="room_name" class="form-control"
+                                                    placeholder="Room Name"><br>
+        <label for="person_name">Your Name:</label><input type="text" name="person_name" id="person_name"
+                                                          class="form-control" placeholder="Your Name"><br>
+        <input type="button" name="button" value="Click to Start Chat" id="submit" class="btn btn-primary btn-block">
+    </div>
+    <script>
+        $("#submit").click(function (e) {
+            var roomname = $("#room_name").val();
+            var personname = $("#person_name").val();
+            window.location.pathname = '/room/' + roomname + '/' + personname;
+        })
+    </script>
+{% endblock content %}
